@@ -40,7 +40,7 @@ export default function Home() {
         {/* Hero Content */}
         <div className="container relative z-10 flex justify-center px-4">
           <div className="relative w-full max-w-5xl mt-12">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-white/40 to-secondary/20 blur-3xl opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-white/40 to-secondary/20 blur-2xl opacity-80" />
             <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/90 shadow-2xl shadow-primary/10 hero-glass">
               <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-primary/5 to-secondary/5" />
               <div className="relative flex flex-col items-center text-center space-y-6 px-6 py-12 md:px-14">
