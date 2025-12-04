@@ -41,10 +41,10 @@ export default function Home() {
         <div className="container relative z-10 flex justify-center px-4">
           <div className="relative w-full max-w-5xl mt-12">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-white/40 to-secondary/20 blur-3xl opacity-80" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/65 backdrop-blur-xl shadow-2xl shadow-primary/10">
+            <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/90 shadow-2xl shadow-primary/10 hero-glass">
               <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-primary/5 to-secondary/5" />
               <div className="relative flex flex-col items-center text-center space-y-6 px-6 py-12 md:px-14">
-                <div className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium mb-2 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-white/90 border border-primary/20 text-primary text-sm font-medium mb-2 animate-in fade-in slide-in-from-bottom-4 duration-700 hero-pill">
                   ✨ Season 1 Now Streaming
                 </div>
 
@@ -73,7 +73,7 @@ export default function Home() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="rounded-full px-8 text-lg bg-white/60 backdrop-blur-sm border-primary/30 text-primary hover:bg-white/80"
+                      className="rounded-full px-8 text-lg bg-white/85 border-primary/30 text-primary hover:bg-white/90 hero-ghost-button"
                     >
                       About Project
                     </Button>
