@@ -17,11 +17,11 @@ export default function StoryDetail() {
     setLoading(true);
     // In a real app, we would map ID to filename more robustly
     getStory(`ep${id}.md`)
-      .then(data => {
+      .then((data) => {
         setStory(data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         setLoading(false);
       });
@@ -54,13 +54,9 @@ export default function StoryDetail() {
     <Layout>
       {/* Story Header */}
       <div className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
-        <img 
-          src={story.image} 
-          alt={story.title} 
-          className="w-full h-full object-cover"
-        />
+        <img src={story.image} alt={story.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        
+
         <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
           <div className="container max-w-4xl mx-auto">
             <Link href="/story">
@@ -68,22 +64,24 @@ export default function StoryDetail() {
                 <ArrowLeft className="mr-2 h-4 w-4" /> Back to Archive
               </Button>
             </Link>
-            
+
             <div className="flex items-center gap-3 text-white/80 text-sm font-medium mb-4">
-              <span className="px-3 py-1 rounded-full bg-primary/80 backdrop-blur-sm text-white">Episode {story.id}</span>
-              <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {story.date}</span>
+              <span className="px-3 py-1 rounded-full bg-primary/80 backdrop-blur-sm text-white">
+                Episode {story.id}
+              </span>
+              <span className="flex items-center gap-1">
+                <Calendar className="w-4 h-4" /> {story.date}
+              </span>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg font-sans">
-              {story.title}
-            </h1>
+
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg font-sans">{story.title}</h1>
           </div>
         </div>
       </div>
 
       {/* Story Content */}
       <article className="container max-w-3xl mx-auto py-16 px-6 md:px-0">
-        <div 
+        <div
           className="prose prose-lg prose-slate md:prose-xl font-serif leading-loose text-foreground/90 [&>p:first-of-type]:first-letter:text-5xl [&>p:first-of-type]:first-letter:font-bold [&>p:first-of-type]:first-letter:text-primary [&>p:first-of-type]:first-letter:mr-3 [&>p:first-of-type]:first-letter:float-left"
           dangerouslySetInnerHTML={{ __html: story.htmlContent }}
         />
@@ -114,7 +112,7 @@ export default function StoryDetail() {
       <section className="bg-muted/30 py-16">
         <div className="container max-w-4xl mx-auto">
           <SectionTitle title="Related SNS Logs" subtitle="このエピソードの裏側で。" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-xl border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-4">
@@ -127,10 +125,11 @@ export default function StoryDetail() {
                 </div>
               </div>
               <p className="text-sm mb-4">
-                言い過ぎちゃったかな...。でも、妥協したくない。私たちならもっと上に行けるはずだから。 #PrismBeat #Rehearsal
+                言い過ぎちゃったかな...。でも、妥協したくない。私たちならもっと上に行けるはずだから。 #PrismBeat
+                #Rehearsal
               </p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-xl border border-border shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-muted overflow-hidden">
@@ -146,10 +145,12 @@ export default function StoryDetail() {
               </p>
             </div>
           </div>
-          
+
           <div className="text-center mt-8">
             <Link href="/sns">
-              <Button variant="outline" className="rounded-full">View All SNS Logs</Button>
+              <Button variant="outline" className="rounded-full">
+                View All SNS Logs
+              </Button>
             </Link>
           </div>
         </div>

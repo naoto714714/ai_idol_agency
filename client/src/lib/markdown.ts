@@ -1,5 +1,5 @@
-import { marked } from 'marked';
-import fm from 'front-matter';
+import { marked } from "marked";
+import fm from "front-matter";
 
 export interface StoryAttributes {
   id: number;
@@ -26,7 +26,7 @@ export async function getStory(filename: string): Promise<StoryData> {
   return {
     ...attributes,
     content: body,
-    htmlContent
+    htmlContent,
   };
 }
 
@@ -35,25 +35,21 @@ export async function getAllStories(): Promise<StoryData[]> {
   // Since this is a client-side app, we need a manifest or a known list.
   // For this implementation, we'll fetch a manifest file that we'll generate.
   // If manifest doesn't exist (dev mode), we fallback to known list.
-  
+
   try {
-    const response = await fetch('/content/stories/manifest.json');
+    const response = await fetch("/content/stories/manifest.json");
     if (response.ok) {
       const files = await response.json();
-      const stories = await Promise.all(
-        files.map((file: string) => getStory(file))
-      );
+      const stories = await Promise.all(files.map((file: string) => getStory(file)));
       return stories.sort((a, b) => b.id - a.id);
     }
   } catch (e) {
-    console.warn('Manifest not found, using fallback list');
+    console.warn("Manifest not found, using fallback list");
   }
 
   // Fallback for dev/demo
-  const knownFiles = ['ep1.md', 'ep2.md', 'ep3.md'];
-  const stories = await Promise.all(
-    knownFiles.map(file => getStory(file))
-  );
-  
+  const knownFiles = ["ep1.md", "ep2.md", "ep3.md"];
+  const stories = await Promise.all(knownFiles.map((file) => getStory(file)));
+
   return stories.sort((a, b) => b.id - a.id);
 }

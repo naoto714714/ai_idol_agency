@@ -8,9 +8,7 @@ export default function About() {
       <div className="bg-muted/30 py-12 border-b border-border/50">
         <div className="container text-center">
           <h1 className="font-sans text-4xl font-bold mb-4">About Project</h1>
-          <p className="text-muted-foreground font-serif max-w-2xl mx-auto">
-            PRISM BEAT Projectについて
-          </p>
+          <p className="text-muted-foreground font-serif max-w-2xl mx-auto">PRISM BEAT Projectについて</p>
         </div>
       </div>
 
@@ -19,14 +17,15 @@ export default function About() {
           <SectionTitle title="Concept" subtitle="AIと物語の融合" align="left" />
           <div className="prose prose-lg max-w-none font-serif leading-loose text-foreground/90">
             <p>
-              「PRISM BEAT」は、AI技術によって生成された架空のアイドルたちが織りなす、新しい形のエンターテインメントプロジェクトです。
+              「PRISM
+              BEAT」は、AI技術によって生成された架空のアイドルたちが織りなす、新しい形のエンターテインメントプロジェクトです。
             </p>
             <p>
               彼女たちは歌を歌いません（現時点では）。その代わり、彼女たちの成長、葛藤、そして日常の些細な出来事が、テキストベースのストーリーとSNSログとしてリアルタイムに更新されていきます。
             </p>
             <p>
               まるで実在するアイドルの活動を追うように、あるいは連載小説を読むように。
-              <br/>
+              <br />
               デジタルな存在である彼女たちが、物語を通じて「心」を獲得していく過程を、どうぞ見守ってください。
             </p>
           </div>
@@ -41,7 +40,7 @@ export default function About() {
                 キャラクターデザイン、背景、挿絵などのビジュアル要素は、画像生成AIを活用して制作されています。一貫した世界観を保ちつつ、AIならではの幻想的な表現を追求しています。
               </p>
             </PrismCard>
-            
+
             <PrismCard className="p-6 bg-white" hoverEffect={false}>
               <h3 className="text-xl font-bold mb-4 text-secondary">Story Co-creation</h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -54,7 +53,8 @@ export default function About() {
         <section className="bg-muted/30 p-8 rounded-2xl border border-border/50 text-center">
           <h3 className="text-xl font-bold mb-4">Join the Community</h3>
           <p className="text-muted-foreground mb-6">
-            感想や応援メッセージは、ハッシュタグ #PrismBeat でSNSに投稿してください。<br/>
+            感想や応援メッセージは、ハッシュタグ #PrismBeat でSNSに投稿してください。
+            <br />
             あなたの声が、彼女たちの物語を変えるかもしれません。
           </p>
         </section>

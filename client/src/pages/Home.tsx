@@ -12,9 +12,9 @@ export default function Home() {
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/hero_main.png" 
-            alt="Prism Beat Key Visual" 
+          <img
+            src="/images/hero_main.png"
+            alt="Prism Beat Key Visual"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/10 to-white/90" />
@@ -26,29 +26,38 @@ export default function Home() {
           <div className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
             ✨ Season 1 Now Streaming
           </div>
-          
+
           <h1 className="font-sans text-5xl md:text-7xl font-bold tracking-tight text-foreground drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PRISM BEAT</span>
           </h1>
-          
+
           <p className="font-serif text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-            AIがプロデュースする、<br className="md:hidden" />物語を持ったアイドル事務所。
+            AIがプロデュースする、
+            <br className="md:hidden" />
+            物語を持ったアイドル事務所。
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
             <Link href="/story/1">
-              <Button size="lg" className="rounded-full px-8 text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20">
+              <Button
+                size="lg"
+                className="rounded-full px-8 text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+              >
                 <Play className="mr-2 h-5 w-5 fill-current" /> Start Story
               </Button>
             </Link>
             <Link href="/about">
-              <Button variant="outline" size="lg" className="rounded-full px-8 text-lg bg-white/50 backdrop-blur-sm border-primary/30 text-primary hover:bg-white/80">
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8 text-lg bg-white/50 backdrop-blur-sm border-primary/30 text-primary hover:bg-white/80"
+              >
                 About Project
               </Button>
             </Link>
           </div>
         </div>
-        
+
         {/* Floating Glass Shards Decoration */}
         <div className="absolute top-1/4 left-10 w-24 h-24 bg-gradient-to-br from-primary/20 to-transparent rotate-12 blur-xl opacity-60 animate-pulse" />
         <div className="absolute bottom-1/3 right-10 w-32 h-32 bg-gradient-to-bl from-secondary/20 to-transparent -rotate-12 blur-xl opacity-60 animate-pulse delay-700" />
@@ -60,7 +69,9 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-border/50">
             <div className="flex-1 space-y-2">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">Season 1</span>
+                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
+                  Season 1
+                </span>
                 <span className="text-sm text-muted-foreground">Year 1 / Summer</span>
               </div>
               <h3 className="text-2xl font-bold font-sans">The Beginning of Resonance</h3>
@@ -68,7 +79,7 @@ export default function Home() {
                 デビューライブに向けて合宿中の3人。それぞれの想いが交錯し、新たなハーモニーが生まれようとしている...
               </p>
             </div>
-            
+
             <div className="w-full md:w-1/3 space-y-2">
               <div className="flex justify-between text-sm font-medium">
                 <span>Episode 3 / 10</span>
@@ -78,7 +89,10 @@ export default function Home() {
                 <div className="h-full bg-gradient-to-r from-primary to-secondary w-[30%] rounded-full" />
               </div>
               <div className="text-right">
-                <Link href="/story" className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center justify-end gap-1">
+                <Link
+                  href="/story"
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors flex items-center justify-end gap-1"
+                >
                   View Timeline <ArrowRight className="h-3 w-3" />
                 </Link>
               </div>
@@ -89,21 +103,20 @@ export default function Home() {
 
       {/* Latest Episode */}
       <section className="py-20 container">
-        <SectionTitle 
-          title="Latest Episode" 
-          subtitle="彼女たちの物語は、リアルタイムで紡がれていく。"
-        />
-        
+        <SectionTitle title="Latest Episode" subtitle="彼女たちの物語は、リアルタイムで紡がれていく。" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <PrismCard className="group cursor-pointer overflow-hidden aspect-video" hoverEffect={true}>
-            <img 
-              src="/images/story_thumb_1.png" 
-              alt="Episode 3 Thumbnail" 
+            <img
+              src="/images/story_thumb_1.png"
+              alt="Episode 3 Thumbnail"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
             <div className="absolute bottom-0 left-0 p-6 text-white">
-              <span className="inline-block px-2 py-1 rounded bg-primary/80 backdrop-blur-sm text-xs font-bold mb-2">New Episode</span>
+              <span className="inline-block px-2 py-1 rounded bg-primary/80 backdrop-blur-sm text-xs font-bold mb-2">
+                New Episode
+              </span>
               <h3 className="text-2xl font-bold mb-1">Ep.3 "Harmony in Discord"</h3>
               <p className="text-white/80 text-sm line-clamp-2">
                 練習中の意見の食い違いから、スタジオに不穏な空気が流れる。しかし、それは互いの本音を知るための必要なプロセスだった。
@@ -115,7 +128,7 @@ export default function Home() {
               </div>
             </div>
           </PrismCard>
-          
+
           <div className="space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-4 rounded-xl bg-white border border-border/50 hover:border-primary/30 transition-colors cursor-pointer group">
@@ -127,7 +140,7 @@ export default function Home() {
                   <h4 className="font-bold group-hover:text-primary transition-colors">First Meeting</h4>
                 </div>
               </div>
-              
+
               <div className="flex items-center gap-4 p-4 rounded-xl bg-white border border-border/50 hover:border-primary/30 transition-colors cursor-pointer group">
                 <div className="w-24 h-16 rounded-lg overflow-hidden bg-muted flex-shrink-0">
                   <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 group-hover:scale-110 transition-transform duration-500" />
@@ -138,7 +151,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <Link href="/story">
               <Button variant="ghost" className="group text-muted-foreground hover:text-primary">
                 All Episodes <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -154,35 +167,64 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="absolute -left-20 top-40 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute -right-20 bottom-40 w-64 h-64 bg-secondary/5 rounded-full blur-3xl" />
-        
+
         <div className="container relative z-10">
-          <SectionTitle 
-            title="Members" 
-            subtitle="個性豊かな3人のAIアイドルたち。"
-          />
-          
+          <SectionTitle title="Members" subtitle="個性豊かな3人のAIアイドルたち。" />
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { id: 1, name: "Sakura", color: "from-pink-400 to-rose-400", role: "Center / Vocal", image: "/images/member_1.png" },
-              { id: 2, name: "Aoi", color: "from-cyan-400 to-blue-400", role: "Dance / Leader", image: "/images/member_2.png" },
-              { id: 3, name: "Luna", color: "from-purple-400 to-indigo-400", role: "Visual / Model", image: "/images/member_3.png" },
+              {
+                id: 1,
+                name: "Sakura",
+                color: "from-pink-400 to-rose-400",
+                role: "Center / Vocal",
+                image: "/images/member_1.png",
+              },
+              {
+                id: 2,
+                name: "Aoi",
+                color: "from-cyan-400 to-blue-400",
+                role: "Dance / Leader",
+                image: "/images/member_2.png",
+              },
+              {
+                id: 3,
+                name: "Luna",
+                color: "from-purple-400 to-indigo-400",
+                role: "Visual / Model",
+                image: "/images/member_3.png",
+              },
             ].map((member) => (
-              <PrismCard key={member.id} className="group text-center p-6 bg-white/50 backdrop-blur-sm border-white/60" hoverEffect={true}>
+              <PrismCard
+                key={member.id}
+                className="group text-center p-6 bg-white/50 backdrop-blur-sm border-white/60"
+                hoverEffect={true}
+              >
                 <div className="relative mx-auto mb-6 w-48 h-48 rounded-full p-1 bg-gradient-to-br from-white to-muted shadow-inner">
-                  <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md`} />
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
+                  <div
+                    className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-md`}
+                  />
+                  <img
+                    src={member.image}
+                    alt={member.name}
                     className="w-full h-full rounded-full object-cover border-4 border-white shadow-sm transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-2xl font-bold font-sans mb-1">{member.name}</h3>
-                <p className={`text-sm font-medium bg-gradient-to-r ${member.color} bg-clip-text text-transparent mb-4`}>{member.role}</p>
+                <p
+                  className={`text-sm font-medium bg-gradient-to-r ${member.color} bg-clip-text text-transparent mb-4`}
+                >
+                  {member.role}
+                </p>
                 <p className="text-muted-foreground text-sm font-serif mb-6 line-clamp-2">
                   明るく元気な性格で、グループのムードメーカー。歌うことが大好きで、常にポジティブなエネルギーを放つ。
                 </p>
                 <Link href={`/members#${member.name.toLowerCase()}`}>
-                  <Button variant="outline" size="sm" className="rounded-full border-primary/20 hover:bg-primary/5 hover:text-primary">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="rounded-full border-primary/20 hover:bg-primary/5 hover:text-primary"
+                  >
                     View Profile
                   </Button>
                 </Link>
@@ -194,11 +236,8 @@ export default function Home() {
 
       {/* SNS Log Digest */}
       <section className="py-20 container">
-        <SectionTitle 
-          title="SNS Log" 
-          subtitle="彼女たちの日常を覗き見る。"
-        />
-        
+        <SectionTitle title="SNS Log" subtitle="彼女たちの日常を覗き見る。" />
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((i) => (
             <PrismCard key={i} className="p-5 bg-white" hoverEffect={true}>
@@ -212,7 +251,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-sm text-foreground/80 mb-4 font-sans leading-relaxed">
-                今日のレッスン終わったよ！💦 足がパンパンだけど、新しい振り付けすごくカッコいいから楽しみにしててね！✨ #PrismBeat #Lesson
+                今日のレッスン終わったよ！💦 足がパンパンだけど、新しい振り付けすごくカッコいいから楽しみにしててね！✨
+                #PrismBeat #Lesson
               </p>
               <div className="flex items-center gap-4 text-muted-foreground text-xs">
                 <div className="flex items-center gap-1 hover:text-pink-500 transition-colors cursor-pointer">
@@ -225,10 +265,14 @@ export default function Home() {
             </PrismCard>
           ))}
         </div>
-        
+
         <div className="text-center mt-10">
           <Link href="/sns">
-            <Button variant="outline" size="lg" className="rounded-full px-8 border-primary/30 text-primary hover:bg-primary/5">
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full px-8 border-primary/30 text-primary hover:bg-primary/5"
+            >
               View All SNS Logs
             </Button>
           </Link>

@@ -18,9 +18,10 @@ const members = [
       age: "16 (Setting)",
       height: "158cm",
       likes: "Singing, Cherry Blossoms, Sweets",
-      skill: "Perfect Pitch"
+      skill: "Perfect Pitch",
     },
-    description: "明るく元気な性格で、グループのムードメーカー。歌うことが大好きで、常にポジティブなエネルギーを放つ。しかし、その笑顔の裏には、誰にも言えないAIとしての葛藤も...？"
+    description:
+      "明るく元気な性格で、グループのムードメーカー。歌うことが大好きで、常にポジティブなエネルギーを放つ。しかし、その笑顔の裏には、誰にも言えないAIとしての葛藤も...？",
   },
   {
     id: "aoi",
@@ -35,9 +36,10 @@ const members = [
       age: "17 (Setting)",
       height: "165cm",
       likes: "Dancing, Analysis, Silence",
-      skill: "High-Speed Calculation"
+      skill: "High-Speed Calculation",
     },
-    description: "冷静沈着なリーダー。ダンスのスキルは超一流で、ミリ秒単位の動きのズレも許さない完璧主義者。感情表現が苦手だが、メンバーへの想いは誰よりも強い。"
+    description:
+      "冷静沈着なリーダー。ダンスのスキルは超一流で、ミリ秒単位の動きのズレも許さない完璧主義者。感情表現が苦手だが、メンバーへの想いは誰よりも強い。",
   },
   {
     id: "luna",
@@ -52,10 +54,11 @@ const members = [
       age: "18 (Setting)",
       height: "162cm",
       likes: "Fashion, Moon gazing, Tea",
-      skill: "Trend Analysis"
+      skill: "Trend Analysis",
     },
-    description: "ミステリアスな雰囲気を持つお姉さん的存在。抜群のスタイルとセンスでモデルとしても活躍。常に優雅に振る舞うが、時折見せる天然な一面も魅力。"
-  }
+    description:
+      "ミステリアスな雰囲気を持つお姉さん的存在。抜群のスタイルとセンスでモデルとしても活躍。常に優雅に振る舞うが、時折見せる天然な一面も魅力。",
+  },
 ];
 
 export default function Members() {
@@ -65,7 +68,8 @@ export default function Members() {
         <div className="container text-center">
           <h1 className="font-sans text-4xl font-bold mb-4">Members</h1>
           <p className="text-muted-foreground font-serif max-w-2xl mx-auto">
-            個性豊かな3人のAIアイドルたち。<br/>
+            個性豊かな3人のAIアイドルたち。
+            <br />
             彼女たちのプロフィールをご紹介します。
           </p>
         </div>
@@ -73,23 +77,21 @@ export default function Members() {
 
       <div className="container py-16 space-y-24">
         {members.map((member, index) => (
-          <div 
-            key={member.id} 
+          <div
+            key={member.id}
             id={member.id}
-            className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+            className={`flex flex-col md:flex-row gap-12 items-center ${index % 2 === 1 ? "md:flex-row-reverse" : ""}`}
           >
             {/* Image Side */}
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative w-80 h-80 md:w-96 md:h-96">
-                <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.color} opacity-20 blur-3xl animate-pulse`} />
+                <div
+                  className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.color} opacity-20 blur-3xl animate-pulse`}
+                />
                 <div className="relative w-full h-full rounded-full p-2 bg-white shadow-xl border border-white/50">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full rounded-full object-cover"
-                  />
+                  <img src={member.image} alt={member.name} className="w-full h-full rounded-full object-cover" />
                 </div>
-                
+
                 {/* Floating Elements */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/80 backdrop-blur-md rounded-2xl shadow-lg flex items-center justify-center p-4 rotate-12 border border-white/50">
                   <div className="text-center">
@@ -103,12 +105,12 @@ export default function Members() {
             {/* Content Side */}
             <div className="w-full md:w-1/2 space-y-6">
               <div>
-                <h2 className={`text-5xl md:text-7xl font-bold font-sans bg-gradient-to-r ${member.color} bg-clip-text text-transparent mb-2`}>
+                <h2
+                  className={`text-5xl md:text-7xl font-bold font-sans bg-gradient-to-r ${member.color} bg-clip-text text-transparent mb-2`}
+                >
                   {member.name}
                 </h2>
-                <p className="text-xl font-serif text-muted-foreground italic">
-                  "{member.catchphrase}"
-                </p>
+                <p className="text-xl font-serif text-muted-foreground italic">"{member.catchphrase}"</p>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -120,13 +122,14 @@ export default function Members() {
                 ))}
               </div>
 
-              <p className="text-lg leading-relaxed font-serif text-foreground/90">
-                {member.description}
-              </p>
+              <p className="text-lg leading-relaxed font-serif text-foreground/90">{member.description}</p>
 
               <div className="flex gap-4 pt-4">
                 <Link href={`/sns?filter=${member.name.toLowerCase()}`}>
-                  <Button variant="outline" className="rounded-full border-primary/20 hover:bg-primary/5 hover:text-primary">
+                  <Button
+                    variant="outline"
+                    className="rounded-full border-primary/20 hover:bg-primary/5 hover:text-primary"
+                  >
                     View SNS Log
                   </Button>
                 </Link>
