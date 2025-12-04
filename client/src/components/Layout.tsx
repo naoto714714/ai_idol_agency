@@ -1,6 +1,5 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -118,6 +117,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 </Link>
               </li>
               <li>
+                <Link href="/about" className="hover:text-primary transition-colors">
+                  About Project
+                </Link>
+              </li>
+              <li>
                 <Link href="/archive" className="hover:text-primary transition-colors">
                   Archive
                 </Link>
@@ -129,26 +133,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <h4 className="font-bold text-sm">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/about" className="hover:text-primary transition-colors">
-                  About Project
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   Privacy Policy
                 </a>
               </li>
             </ul>
           </div>
-        </div>
-        <div className="container mt-12 pt-8 border-t border-border/50 text-center text-xs text-muted-foreground">
-          <p>© 2025 AI Idol Agency Project. All Rights Reserved.</p>
-          <p className="mt-2 opacity-60">Powered by AI Technology</p>
         </div>
       </footer>
     </div>

@@ -1,20 +1,32 @@
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { SectionTitle } from "@/components/SectionTitle";
-import { getStory, StoryData } from "@/lib/markdown";
+import { getAllStories, getStory, StoryData } from "@/lib/markdown";
 import { ArrowLeft, ArrowRight, Calendar, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useRoute } from "wouter";
+import NotFound from "./NotFound";
 
 export default function StoryDetail() {
   const [, params] = useRoute("/story/:id");
   const id = params?.id || "1";
   const [story, setStory] = useState<StoryData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
+  const [availableIds, setAvailableIds] = useState<number[]>([]);
+
+  const numericId = Number(id);
+  const isValidId = Number.isInteger(numericId) && numericId > 0;
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setNotFound(false);
     setLoading(true);
+    if (!isValidId) {
+      setNotFound(true);
+      setLoading(false);
+      return;
+    }
     // In a real app, we would map ID to filename more robustly
     getStory(`ep${id}.md`)
       .then((data) => {
@@ -23,9 +35,28 @@ export default function StoryDetail() {
       })
       .catch((err) => {
         console.error(err);
+        setNotFound(true);
         setLoading(false);
       });
-  }, [id]);
+  }, [id, isValidId]);
+
+  useEffect(() => {
+    getAllStories()
+      .then((data) => {
+        const ids = data.map((episode) => episode.id).sort((a, b) => a - b);
+        setAvailableIds(ids);
+      })
+      .catch((err) => {
+        console.error("Failed to load stories list", err);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!isValidId || availableIds.length === 0) return;
+    if (!availableIds.includes(numericId)) {
+      setNotFound(true);
+    }
+  }, [availableIds, isValidId, numericId]);
 
   if (loading) {
     return (
@@ -37,18 +68,12 @@ export default function StoryDetail() {
     );
   }
 
-  if (!story) {
-    return (
-      <Layout>
-        <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-          <div className="text-xl font-bold">Story not found</div>
-          <Link href="/story">
-            <Button>Back to Archive</Button>
-          </Link>
-        </div>
-      </Layout>
-    );
+  if (!story || notFound) {
+    return <NotFound />;
   }
+
+  const hasPrevious = isValidId && availableIds.includes(numericId - 1);
+  const hasNext = isValidId && availableIds.includes(numericId + 1);
 
   return (
     <Layout>
@@ -94,16 +119,28 @@ export default function StoryDetail() {
             </Button>
           </div>
           <div className="flex gap-4">
-            <Link href={`/story/${Number(id) - 1}`}>
-              <Button variant="ghost" disabled={Number(id) <= 1}>
+            {hasPrevious ? (
+              <Link href={`/story/${numericId - 1}`}>
+                <Button variant="ghost">
+                  <ArrowLeft className="mr-2 h-4 w-4" /> Previous
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="ghost" disabled>
                 <ArrowLeft className="mr-2 h-4 w-4" /> Previous
               </Button>
-            </Link>
-            <Link href={`/story/${Number(id) + 1}`}>
-              <Button variant="default" className="bg-primary hover:bg-primary/90">
-                Next Episode <ArrowRight className="ml-2 h-4 w-4" />
+            )}
+            {hasNext ? (
+              <Link href={`/story/${numericId + 1}`}>
+                <Button variant="default" className="bg-primary hover:bg-primary/90">
+                  Next Episode <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            ) : (
+              <Button variant="default" className="bg-slate-500 text-white hover:bg-slate-500" disabled>
+                Coming Soon... <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            )}
           </div>
         </div>
       </article>
