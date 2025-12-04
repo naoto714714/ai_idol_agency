@@ -1,6 +1,5 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -145,10 +144,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="container mt-12 pt-8 border-t border-border/50 text-center text-xs text-muted-foreground">
-          <p>© 2025 AI Idol Agency Project. All Rights Reserved.</p>
-          <p className="mt-2 opacity-60">Powered by AI Technology</p>
         </div>
       </footer>
     </div>
