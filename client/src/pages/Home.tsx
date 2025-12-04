@@ -38,39 +38,49 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="container relative z-10 flex flex-col items-center text-center space-y-6 pt-20">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium mb-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            ✨ Season 1 Now Streaming
-          </div>
+        <div className="container relative z-10 flex justify-center px-4">
+          <div className="relative w-full max-w-5xl mt-12">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-white/40 to-secondary/20 blur-3xl opacity-80" />
+            <div className="relative overflow-hidden rounded-3xl border border-white/70 bg-white/65 backdrop-blur-xl shadow-2xl shadow-primary/10">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-primary/5 to-secondary/5" />
+              <div className="relative flex flex-col items-center text-center space-y-6 px-6 py-12 md:px-14">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-sm font-medium mb-2 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                  ✨ Season 1 Now Streaming
+                </div>
 
-          <h1 className="font-sans text-5xl md:text-7xl font-bold tracking-tight text-foreground drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">PRISM BEAT</span>
-          </h1>
+                <h1 className="font-sans text-5xl md:text-7xl font-bold tracking-tight text-foreground drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    PRISM BEAT
+                  </span>
+                </h1>
 
-          <p className="font-serif text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-            AIがプロデュースする、
-            <br className="md:hidden" />
-            物語を持ったアイドル事務所。
-          </p>
+                <p className="font-serif text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+                  AIがプロデュースする、
+                  <br className="md:hidden" />
+                  物語を持ったアイドル事務所。
+                </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-8 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
-            <Link href="/story/1">
-              <Button
-                size="lg"
-                className="rounded-full px-8 text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
-              >
-                <Play className="mr-2 h-5 w-5 fill-current" /> Start Story
-              </Button>
-            </Link>
-            <Link href="/about">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full px-8 text-lg bg-white/50 backdrop-blur-sm border-primary/30 text-primary hover:bg-white/80"
-              >
-                About Project
-              </Button>
-            </Link>
+                <div className="flex flex-col sm:flex-row gap-4 mt-6 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
+                  <Link href="/story/1">
+                    <Button
+                      size="lg"
+                      className="rounded-full px-8 text-lg bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
+                    >
+                      <Play className="mr-2 h-5 w-5 fill-current" /> Start Story
+                    </Button>
+                  </Link>
+                  <Link href="/about">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="rounded-full px-8 text-lg bg-white/60 backdrop-blur-sm border-primary/30 text-primary hover:bg-white/80"
+                    >
+                      About Project
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
