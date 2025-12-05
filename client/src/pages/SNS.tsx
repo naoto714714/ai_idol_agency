@@ -1,10 +1,8 @@
-import { Layout } from "@/components/Layout";
-import { SectionTitle } from "@/components/SectionTitle";
-import { PrismCard } from "@/components/PrismCard";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Heart, MessageCircle, Repeat, Share } from "lucide-react";
 import { useState } from "react";
+import { Layout } from "@/components/Layout";
+import { PrismCard } from "@/components/PrismCard";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const posts = [
   {

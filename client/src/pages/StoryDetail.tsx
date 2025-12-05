@@ -1,10 +1,10 @@
-import { Layout } from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { SectionTitle } from "@/components/SectionTitle";
-import { getAllStories, getStory, StoryData } from "@/lib/markdown";
 import { ArrowLeft, ArrowRight, Calendar, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useRoute } from "wouter";
+import { Layout } from "@/components/Layout";
+import { SectionTitle } from "@/components/SectionTitle";
+import { Button } from "@/components/ui/button";
+import { getAllStories, getStory, StoryData } from "@/lib/markdown";
 import NotFound from "./NotFound";
 
 export default function StoryDetail() {

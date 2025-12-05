@@ -1,8 +1,6 @@
-import { Layout } from "@/components/Layout";
-import { SectionTitle } from "@/components/SectionTitle";
-import { PrismCard } from "@/components/PrismCard";
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { Layout } from "@/components/Layout";
+import { Button } from "@/components/ui/button";
 
 const members = [
   {

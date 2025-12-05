@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
-import { SectionTitle } from "@/components/SectionTitle";
 import { PrismCard } from "@/components/PrismCard";
+import { SectionTitle } from "@/components/SectionTitle";
 
 export default function About() {
   return (

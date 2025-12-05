@@ -1,11 +1,11 @@
+import { ArrowRight, Play, Heart, MessageCircle, Calendar, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import { Layout } from "@/components/Layout";
 import { PrismCard } from "@/components/PrismCard";
 import { SectionTitle } from "@/components/SectionTitle";
+import { Button } from "@/components/ui/button";
 import { getAllStories, StoryData } from "@/lib/markdown";
-import { ArrowRight, Play, Heart, MessageCircle, Calendar, Clock } from "lucide-react";
-import { Link } from "wouter";
 
 export default function Home() {
   const [stories, setStories] = useState<StoryData[]>([]);
